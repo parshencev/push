@@ -10,7 +10,7 @@ function App(env){
 		title_selector: "#title",
 		icon_selector: "#icon",
 		body_selector: "#body",
-		sw_url: "./js/sw.js"
+		sw_url: "sw.js"
 	});
 	this.get_dom = function(type){
 		switch(type){
