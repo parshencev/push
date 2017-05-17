@@ -61,10 +61,10 @@ function App(env){
 		}).bind(this));
 	};
 	this.notificationMethod = function(){
-		var message = new this.notification.apply(this.getOptions());
+		var message = new this.notification.apply(this,this.getOptions());
 	};
 	this.serviceWorkerMethod = function(){
-		this.registration.showNotification.apply(this.getOptions());
+		this.registration.showNotification.apply(this,this.getOptions());
 	};
 	this.initMethod = function(){
 		this.method == "sw" ? 
