@@ -44,7 +44,10 @@ function App(env){
 				this.state = false;
 			else {
 				this.state = true;
-				this.initMethod();
+				if (this.method == "sw")
+					this.initServiceWorker();
+				else
+					this.initMethod();
 			}
 		}).bind(this));
 	};
@@ -108,10 +111,7 @@ function App(env){
 		} else {
 			this.method = "nt";
 			this.message.innerHTML += "<br> выбран метод через нотификации";
-		}
-		if (this.method == "sw")
-			this.initServiceWorker();
-		else 
-			this.initNotification();
+		} 
+		this.initNotification();
 	};
 }
