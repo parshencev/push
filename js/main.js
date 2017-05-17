@@ -103,7 +103,7 @@ function App(env){
 		}
 		if(!this.sw_check && !this.nt_check){
 			this.work = false;
-			this.message += "<br> пуш уведомление не отправить с этого браузера";
+			this.message.innerHTML += "<br> пуш уведомление не отправить с этого браузера";
 		} else {
 			this.work = true;
 		}
