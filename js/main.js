@@ -10,8 +10,7 @@ function App(env){
 		title_selector: "#title",
 		icon_selector: "#icon",
 		body_selector: "#body",
-		sw_url: "./js/",
-		sw_filename: "sw.js"
+		sw_url: "./js/sw.js"
 	});
 	this.get_dom = function(type){
 		switch(type){
@@ -29,7 +28,7 @@ function App(env){
 		return false;
 	};
 	this.initServiceWorker = function(){
-		this.serviceWorker.register(this.env.sw_filename, {scope: this.env.sw_url}).then((function(registration){
+		this.serviceWorker.register(this.env.sw_url).then((function(registration){
 			this.registration = registration;
 			this.message.innerHTML += "<br> сервис воркер зарегистрирован";
 			this.initMethod();
