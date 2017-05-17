@@ -1,0 +1,50 @@
+body{
+	margin: 0;
+	padding-top: 1px;
+}
+*{
+	font: 14px/1.5em Arial, sans-serif;
+}
+.form{
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+	width: 300px;
+	margin-top: 50px;
+	border: 1px solid;
+}
+.form header{
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+.form_element{
+	margin-top: 10px;
+}
+.form_element input{
+	width: 100%;
+	box-sizing: border-box;
+	background: none;
+	border: none;
+	border-bottom: 1px solid;
+	padding: 10px 5px;
+	cursor: pointer;
+}
+.form_element label{
+	width: 100%;
+	font-weight: bold;
+	cursor: pointer;
+}
+.form_element button{
+	background: none;
+	border: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+}
+.form footer{
+	margin-top: 10px;
+	text-align: justify;
+	font-size: 12px;
+}
