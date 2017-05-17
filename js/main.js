@@ -27,6 +27,15 @@ function App(env){
 		}
 		return false;
 	};
+	this.getOptions = function(){
+		return [
+			this.title.value || "simple title",
+			{
+				body: this.body.value || "text text text text in body",
+				icon: this.icon.value || "https://www.lorextechnology.com/images/articles/content/Introducting%20FLIR%20Cloud/push%20notifications%20icon.png"
+			}
+		]
+	};
 	this.initServiceWorker = function(){
 		this.serviceWorker.register(this.env.sw_url).then((function(registration){
 			this.registration = registration;
@@ -52,19 +61,10 @@ function App(env){
 		}).bind(this));
 	};
 	this.notificationMethod = function(){
-		var message = new this.notification(this.title.value, {
-			body: this.body.value,
-			icon: this.icon.value,
-			onshow: function(data){
-				alert(data)
-			}
-		});
+		var message = new this.notification.apply(this.getOptions());
 	};
 	this.serviceWorkerMethod = function(){
-		this.registration.showNotification(this.title.value, {
-			body: this.body.value,
-			icon: this.icon.value
-		})
+		this.registration.showNotification.apply(this.getOptions());
 	};
 	this.initMethod = function(){
 		this.method == "sw" ? 
